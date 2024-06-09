@@ -1,6 +1,15 @@
+"use client";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleDownloadClick = () => {
+    // Ganti URL ini dengan URL yang diinginkan
+    router.push("https://example.com/download");
+  };
+
   return (
     <div>
       <div className="flex-col h-screen bg-white">
@@ -14,7 +23,10 @@ export default function Home() {
               <div className="w-[532px] text-black text-5xl font-medium">Katakan ‘selamat tinggal’ untuk rebutan kursi shuttle!</div>
               <div className="w-[528px] text-black text-lg font-normal">Dengan aplikasi kami, pelacakan lokasi shuttle ITB menjadi jauh lebih mudah. Jangan takut rebutan, karena kini kamu bisa booking kursi dalam beberapa klik saja!</div>
             </div>
-            <div className="w-[431px] h-[73px] px-12 py-6 bg-blue-600 rounded-lg mt-8">
+            <div 
+              className="w-[431px] h-[73px] px-12 py-6 bg-blue-600 rounded-lg mt-8 cursor-pointer" 
+              onClick={handleDownloadClick}
+            >
               <p className="text-center text-white text-2xl font-bold">Download Aplikasi Sekarang</p>
             </div>
           </div>
